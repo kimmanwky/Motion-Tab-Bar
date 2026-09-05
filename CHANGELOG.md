@@ -1,4 +1,4 @@
-## [0.5.0] - 05-Sep-2026
+## [3.0.0] - 05-Sep-2026
 * [NEW] add documentation comments to all public APIs
 * [NEW] add unit & widget tests
 * [NEW] add GitHub Actions CI workflow

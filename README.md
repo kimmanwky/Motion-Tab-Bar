@@ -39,7 +39,7 @@ Add the package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  motion_tab_bar_v2: ^0.5.0
+  motion_tab_bar_v2: ^3.0.0
 ```
 
 ## Basic Usage
