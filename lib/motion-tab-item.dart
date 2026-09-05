@@ -1,26 +1,72 @@
+/// A single tab item rendered inside a [MotionTabBar].
+library motiontabitem;
+
+// The file name uses a hyphen and the animation constants use SCREAMING_SNAKE
+// case for backwards compatibility with the public API.
+// ignore_for_file: file_names, constant_identifier_names
+
 import 'package:flutter/material.dart';
 
+/// Vertical alignment offset of the icon when the tab is not selected.
 const double ICON_OFF = -3;
+
+/// Vertical alignment offset of the icon when the tab is selected.
 const double ICON_ON = 0;
+
+/// Vertical alignment offset of the label when the tab is not selected.
 const double TEXT_OFF = 3;
+
+/// Vertical alignment offset of the label when the tab is selected.
 const double TEXT_ON = 1;
+
+/// Opacity of the icon when the tab is not selected.
 const double ALPHA_OFF = 0;
+
+/// Opacity of the icon when the tab is selected.
 const double ALPHA_ON = 1;
+
+/// Duration (in milliseconds) of the tab item animations.
 const int ANIM_DURATION = 300;
 
+/// A single tab item inside a [MotionTabBar].
+///
+/// Handles the icon/label animation that happens when the tab becomes
+/// selected or unselected. This widget is used internally by [MotionTabBar]
+/// and is not intended to be used directly.
 class MotionTabItem extends StatefulWidget {
+  /// The label of this tab.
   final String? label;
+
+  /// Whether the label is always visible (default: only when selected).
   final bool labelAlwaysVisible;
+
+  /// Whether this tab is currently selected.
   final bool selected;
+
+  /// [TextStyle] applied to the label.
   final TextStyle textStyle;
+
+  /// Callback invoked when the tab is tapped.
   final Function callbackFunction;
+
+  /// Optional badge widget shown on this tab.
   final Widget? badge;
+
+  /// Optional custom widget used as the tab icon.
   final Widget? tabIconWidget;
+
+  /// Optional [IconData] used as the tab icon.
   final IconData? tabIconData;
+
+  /// Color of the (unselected) tab icon.
   final Color? tabIconColor;
+
+  /// Size of the (unselected) tab icon.
   final double? tabIconSize;
 
-  MotionTabItem({
+  /// Creates a [MotionTabItem].
+  const MotionTabItem({
+    Key? key,
     required this.label,
     required this.selected,
     required this.textStyle,
@@ -31,10 +77,10 @@ class MotionTabItem extends StatefulWidget {
     this.tabIconData,
     this.tabIconColor,
     this.tabIconSize = 24,
-  });
+  }) : super(key: key);
 
   @override
-  _MotionTabItemState createState() => _MotionTabItemState();
+  State<MotionTabItem> createState() => _MotionTabItemState();
 }
 
 class _MotionTabItemState extends State<MotionTabItem> {
@@ -54,7 +100,7 @@ class _MotionTabItemState extends State<MotionTabItem> {
     _setIconTextAlpha();
   }
 
-  _setIconTextAlpha() {
+  void _setIconTextAlpha() {
     setState(() {
       iconAlpha = (widget.selected) ? ALPHA_OFF : ALPHA_ON;
       iconYAlign = (widget.selected) ? ICON_OFF : ICON_ON;
@@ -95,7 +141,7 @@ class _MotionTabItemState extends State<MotionTabItem> {
           ),
           InkWell(
             onTap: () => widget.callbackFunction(),
-            child: Container(
+            child: SizedBox(
               height: double.infinity,
               width: double.infinity,
               child: AnimatedAlign(

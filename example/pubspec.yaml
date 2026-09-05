@@ -1,0 +1,23 @@
+name: motion_tab_bar_v2_example
+description: Example app demonstrating the motion_tab_bar_v2 package.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  motion_tab_bar_v2:
+    path: ../
+  flutter_svg: ^2.0.10
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true

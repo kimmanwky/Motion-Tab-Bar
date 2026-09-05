@@ -1,3 +1,14 @@
+## [0.5.0] - 05-Sep-2026
+* [NEW] add documentation comments to all public APIs
+* [NEW] add unit & widget tests
+* [NEW] add GitHub Actions CI workflow
+* [NEW] add `analysis_options.yaml` with `flutter_lints`
+* [FIX] fix dartdoc library name conflict between `motion-tab-bar.dart` and `motion-tab-controller.dart`
+* [FIX] remove unused `vector_math` dependency
+* [FIX] make `example/` a standalone runnable example
+* [FIX] update `example_app` to latest SDK & lints
+* [DOC] rewrite README with full parameter documentation
+
 ## [0.4.0] - 12-Feb-2025
 * [NEW] add `iconWidgets` parameter to support custom icon widget
 * [NEW] add `labelAlwaysVisible` parameter to allow label always showing
