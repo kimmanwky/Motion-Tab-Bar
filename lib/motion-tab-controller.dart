@@ -2,7 +2,7 @@
 // import path.
 // ignore_for_file: file_names
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// A [TabController] that also notifies a [MotionTabBar] when its [index] is
 /// changed programmatically.

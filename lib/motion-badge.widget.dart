@@ -3,7 +3,7 @@
 /// Can display a text badge (e.g. "99+") or a plain indicator dot.
 library motionbadgewidget;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// A small badge or indicator dot shown on a tab.
 ///

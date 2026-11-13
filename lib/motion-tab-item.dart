@@ -5,7 +5,7 @@ library motiontabitem;
 // case for backwards compatibility with the public API.
 // ignore_for_file: file_names, constant_identifier_names
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// Vertical alignment offset of the icon when the tab is not selected.
 const double ICON_OFF = -3;
